@@ -39,8 +39,13 @@ def test_regex_strip():
     assert actual == expected
 
 
-@pytest.mark.skip("pending")
-def test_regex_list():
+
+def test_regex_list_a():
     actual = regex_list('this is a {test} of the emergency broadcast {system}')
     expected = ['test','system']
+    assert actual == expected
+
+def test_regex_list_b():
+    actual = regex_list('{Adjective}')
+    expected = ['Adjective']
     assert actual == expected
